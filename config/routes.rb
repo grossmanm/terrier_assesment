@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  resources :locations do
+    collection do
+      post :import
+      delete :destroy_all
+    end
+  end 
+  
+  resources :technicians
+  delete '/technicians', to: 'technicians#destroy_all', as: 'destroy_all_technicians'
+  resources :technicians do
+    collection do
+      post :import
+    end
+  end
   get "pages/home"
   get "pages/about"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -8,3 +8,167 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ .btn{
+    background-color: #5259be;
+    width: 140px;
+    height: 50px;
+    text-align: center;
+    font-size: 14px;
+    /*add any other properties you want to style*/
+  }
+  .btn1{
+    background-color: #bd1414;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: 14px;
+    /*add any other properties you want to style*/
+  }
+  
+  .imports { 
+    display: flex;
+    justify-content: space-between;
+    gap: 0px; /* Space between the forms */
+    flex-wrap: wrap; /* Adjusts layout on smaller screens */
+  }
+  .btn-group{
+    display:inline-block;
+    width: calc(50% - 4px);
+    margin: 0 auto;
+  }
+
+/* Style the form container */
+.upload-form {
+    flex: 1; /* Makes each form take up equal space */
+    min-width: 300px; /* Ensures forms don't get too small */
+    max-width: 45%; /* Prevents forms from becoming too wide */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the form labels */
+  .upload-form .form-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+  }
+  
+  /* Style the file input */
+  .upload-form .form-control {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style the submit button */
+  .upload-form .btn {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  /* Add hover effect to the submit button */
+  .upload-form .btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+ /* Style for the column headers */
+.column-header {
+    grid-column: span 2; /* Make header span multiple columns */
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: #fff;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+table thead th {
+    text-transform: uppercase;
+}
+
+/* Technicians Section */
+.technician-table {
+    border: 1px solid #007bff;
+}
+
+h3 {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Locations Section */
+.location-table {
+    border: 1px solid #28a745;
+}
+
+.location-table th, .location-table td {
+    text-align: center;
+}
+
+.location-table th {
+    background-color: #28a745;
+}
+
+.location-table tr:nth-child(even) {
+    background-color: #e9f7e7;
+}

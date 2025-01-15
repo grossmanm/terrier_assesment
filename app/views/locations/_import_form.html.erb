@@ -1,0 +1,9 @@
+<%= form_with url: import_locations_path, method: :post, multipart: true, class: "upload-form" do |f| %>
+  <div class="form-group">
+    <label for="file-upload" class="form-label">Upload Location File:</label>
+    <%= f.file_field :file, accept: ".csv, .xls, .xlsx", id: "file-upload", class: "form-control" %>
+  </div>
+  <div class="btn-group mt-3">
+    <%= f.submit "Upload Locations", class: "btn btn-primary btn-lg" %>
+  </div>
+<% end %>

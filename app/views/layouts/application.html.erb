@@ -23,6 +23,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/alerts" %>
+    <div class="container mt-5">
+     <%= yield %>
+    </div>
   </body>
 </html>
