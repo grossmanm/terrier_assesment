@@ -52,9 +52,9 @@ rails server
 # Design Approach
 
 * Database Schema:
- - ``` technicians ``` table stores technician information (id, name)
- - ``` locations ``` table stores location information (id, name, city)
- - ``` work_orders ``` table acts as a join table between technicians and locations, contains scheduling details (id, technician_id, location_id, time, duration, price)
+    - ``` technicians ``` table stores technician information (id, name)
+    - ``` locations ``` table stores location information (id, name, city)
+    - ``` work_orders ``` table acts as a join table between technicians and locations, contains scheduling details (id, technician_id, location_id, time, duration, price)
 
  * Front-End:
     - Uses a felexible grid layout for work order visualization
