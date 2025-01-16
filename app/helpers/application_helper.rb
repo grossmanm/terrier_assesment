@@ -27,7 +27,6 @@ module ApplicationHelper
   
   def prev_work_order_end_time(tech_id, hour)
     # Find the previous work order's end time
-    now = DateTime.now
     work_order = @work_orders
       .select { |wo| wo.technician_id == tech_id && wo.start_time.hour <= hour}
       .max_by { |wo| wo.start_time + wo.duration * 60 }

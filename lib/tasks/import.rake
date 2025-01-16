@@ -24,8 +24,6 @@ namespace :import do
       technician = Technician.find_by(id: row['technician_id'])
       location = Location.find_by(id: row['location_id'])
       if technician && location
-        puts row['time']
-        puts Time.strptime(row['time'], "%m/%d/%y %H:%M").in_time_zone("Central Time (US & Canada)")
         WorkOrder.create_with(
           id: row['id'],
           duration: row['duration'],
@@ -33,7 +31,7 @@ namespace :import do
         ).find_or_create_by!(
           technician: technician,
           location: location,
-          start_time: Time.strptime(row['time'], "%m/%d/%y %H:%M").in_time_zone("Central Time (US & Canada)")
+          start_time: Time.strptime(row['time'], "%m/%d/%y %H:%M")
         )
       else
         puts "Skipping work order due to missing technician or location."

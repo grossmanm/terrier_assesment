@@ -1,0 +1,27 @@
+services:
+  app:
+    build: .
+    environment:
+      - LANG=C.UTF-8
+      - RAILS_TIME_ZONE=Central Time (US & Canada)
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    command: ["rails", "server", "-b", "0.0.0.0"]
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: myapp_development
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  db_data:
