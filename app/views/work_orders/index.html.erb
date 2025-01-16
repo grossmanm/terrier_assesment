@@ -1,0 +1,41 @@
+<%= button_to 'Import Data', run_import_tasks_path, method: :post, remote: true, class: 'btn btn-danger' %>
+<%= button_to 'Delete Data', run_delete_tasks_path, method: :post, remote: true, class: 'btn btn-danger' %>
+
+<div class="schedule-container">
+  <table class="schedule-grid">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <% @technicians.each do |tech| %>
+          <th><%= tech.name %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% (0..23).each do |hour| %>
+        <tr>
+          <td><%= "#{hour}:00" %></td>
+          <% @technicians.each do |tech| %>
+            <% if work_order_exists?(tech.id, hour) %>
+              <td class="<%= work_order_class(tech.id, hour) %>" 
+                  onclick="">
+                <%= work_order_details(tech.id, hour) %>
+              </td>
+            <% else %>
+              <td onclick="showPopup('<%= tech.name %>', '<%= prev_work_order_end_time(tech.id, hour).strftime("%H:%M") %>', '<%= next_work_order_time(tech.id, hour).strftime("%H:%M") %>', '<%= time_difference(tech.id, hour) %>')">
+                <!-- Empty cell for available time -->
+              </td>
+            <% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <p id="popup-message"></p>
+  </div>
+</div>

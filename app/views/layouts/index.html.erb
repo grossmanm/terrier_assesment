@@ -1,0 +1,22 @@
+<div class="schedule-grid">
+  <div class="time-column">
+    <% (0..23).each do |hour| %>
+      <div class="time-label"><%= "#{hour}:00" %></div>
+    <% end %>
+  </div>
+
+ <% @technicians.each do |technician| %>
+  <div class="technician-column" data-technician-id="<%= technician.id %>">
+    <div class="technician-name"><%= technician.name %></div>
+    <% @work_orders.where(technician_id: technician.id).each do |order| %>
+      <div class="work-order" 
+           style="top: <%= order.start_time.hour * 50 %>px; 
+                  height: <%= order.duration %>px;">
+        <%= order.location.name %>, <%= order.location.city %><br>
+        <%= order.start_time.strftime('%H:%M') %>, $<%= order.price %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+</div>

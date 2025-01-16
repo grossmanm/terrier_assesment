@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_14_231411) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_15_203207) do
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.string "city"
@@ -23,4 +23,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_14_231411) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "work_orders", force: :cascade do |t|
+    t.integer "technician_id", null: false
+    t.integer "location_id", null: false
+    t.datetime "start_time"
+    t.integer "duration"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_work_orders_on_location_id"
+    t.index ["technician_id"], name: "index_work_orders_on_technician_id"
+  end
+
+  add_foreign_key "work_orders", "locations"
+  add_foreign_key "work_orders", "technicians"
 end
