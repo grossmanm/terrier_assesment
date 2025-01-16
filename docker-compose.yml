@@ -10,7 +10,7 @@ services:
       - "3000:3000"
     volumes:
       - .:/app
-    command: ["rails", "server", "-b", "0.0.0.0"]
+    command: ["rails", "server", "-b", "0.0.0.0", "-p", "$PORT"]
 
   db:
     image: postgres:15

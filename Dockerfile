@@ -19,3 +19,4 @@ COPY . /app
 
 # Expose port
 EXPOSE 3000
+

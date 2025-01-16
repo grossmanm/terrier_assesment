@@ -99,9 +99,6 @@ GEM
     crass (1.0.6)
     csv (3.3.2)
     date (3.4.1)
-    debase (0.2.8)
-      debase-ruby_core_source (>= 3.3.6)
-    debase-ruby_core_source (3.4.1)
     debug (1.10.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
@@ -274,8 +271,6 @@ GEM
       rubocop-minitest
       rubocop-performance
       rubocop-rails
-    ruby-debug-ide (0.7.4)
-      rake (>= 0.8.1)
     ruby-progressbar (1.13.0)
     rubyzip (2.4.1)
     securerandom (0.4.1)
@@ -360,7 +355,6 @@ DEPENDENCIES
   brakeman
   capybara
   csv
-  debase (~> 0.2.8)
   debug
   importmap-rails
   jbuilder
@@ -370,7 +364,6 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.1)
   rubocop-rails-omakase
-  ruby-debug-ide (~> 0.7.4)
   selenium-webdriver
   solid_cable
   solid_cache
