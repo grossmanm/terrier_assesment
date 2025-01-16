@@ -72,3 +72,5 @@ rails server
 * Ability to import and delete table data with the ``` Import Data ``` and ``` Delete Data ``` buttons
 * Popup capability to display technician down-times
 
+# Note
+I tried to set up docker for this project but wasn't able to get the timings correct, I think it has something to do with sqlite3 and defaulting to GMT instead of CST when time values are stored
